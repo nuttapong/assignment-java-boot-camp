@@ -36,6 +36,10 @@ public class ProductService {
         throw new ProductNotFoundException("Product id not found");
     }
 
+    public ProductAvailable findProductAvailableById(int id){
+        return productAvailableRepository.findById(id);
+    }
+
     public List<ProductAvailable> getProductAvailables(Product product){
         return productAvailableRepository.findByProduct(product);
     }
